@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active: dev
+  
+  jpa:
+    open-in-view: false
+  
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/master.xml
+
+park:
+  config:
+    simulation-step-ms: 1000
+    events-enabled: true
+
+logging:
+  level:
+    com.ejercicio.bloque4: INFO
