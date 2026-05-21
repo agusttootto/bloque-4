@@ -1,13 +1,12 @@
 package com.ejercicio.bloque4;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.ejercicio.bloque4.ui.MenuConsola;
 
-@SpringBootApplication
 public class DemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		MenuConsola menu = new MenuConsola();
+		menu.initEjemplo();
+		menu.mostrarMenu();
 	}
-
 }
