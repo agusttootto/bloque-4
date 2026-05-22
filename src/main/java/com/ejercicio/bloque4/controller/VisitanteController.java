@@ -1,8 +1,10 @@
-package com.ejercicio.bloque4.Controller;
+package com.ejercicio.bloque4.controller;
 
-import com.ejercicio.bloque4.model.DinosaurioJpa;
-import com.ejercicio.bloque4.service.DinosaurioService;
+import com.ejercicio.bloque4.model.VisitanteJpa;
+import com.ejercicio.bloque4.service.VisitanteService;
+
 import lombok.RequiredArgsConstructor;
+
 import java.util.List;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -16,22 +18,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/dinosaurios")
 @CrossOrigin(origins = "http://localhost:5173")
 @RequiredArgsConstructor
-public class DinosaurioController {
+public class VisitanteController {
     
-    private final DinosaurioService dinosaurioService;
+    private final VisitanteService visitanteService;
     
     @GetMapping
-    public List<DinosaurioJpa> listar() {
-        return dinosaurioService.listarTodos();
+    public List<VisitanteJpa> listar() {
+        return visitanteService.listarTodos();
     }
     
     @PostMapping
-    public DinosaurioJpa crear(@RequestBody DinosaurioJpa dinosaurio) {
-        return dinosaurioService.guardar(dinosaurio);
-    }
-    
-    @PostMapping("/alimentar")
-    public void alimentarTodos() {
-        dinosaurioService.alimentarTodos();
+    public VisitanteJpa crear(@RequestBody VisitanteJpa visitante) {
+        return visitanteService.guardar(visitante);
     }
 }

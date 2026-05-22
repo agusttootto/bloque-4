@@ -1,4 +1,4 @@
-package com.ejercicio.bloque4.Controller;
+package com.ejercicio.bloque4.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
