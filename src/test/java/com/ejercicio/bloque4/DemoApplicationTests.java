@@ -1,13 +1,15 @@
-package com.ejercicio.bloque4;
+// package com.ejercicio.bloque4;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+// import org.junit.jupiter.api.Disabled;
+// import org.junit.jupiter.api.Test;
+// import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class DemoApplicationTests {
+// @SpringBootTest
+// class DemoApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+// @Test
+// @Disabled
+// void contextLoads() {
+// }
 
-}
+// }

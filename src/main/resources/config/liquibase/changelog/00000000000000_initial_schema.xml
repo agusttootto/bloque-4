@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <!-- ============================================ -->
+    <!-- TABLA: dinosaurios                           -->
+    <!-- ============================================ -->
+    <changeSet id="1" author="agusttootto">
+        <createTable tableName="dinosaurios">
+            <column name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="nombre" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tipo" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="hambre" type="INT" defaultValueNumeric="50"/>
+            <column name="en_recinto" type="BOOLEAN" defaultValueBoolean="true"/>
+            <column name="ubicacion" type="VARCHAR(200)"/>
+            <column name="created_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP"/>
+        </createTable>
+    </changeSet>
+
+    <!-- ============================================ -->
+    <!-- TABLA: visitantes                            -->
+    <!-- ============================================ -->
+    <changeSet id="2" author="agusttootto">
+        <createTable tableName="visitantes">
+            <column name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="nombre" type="VARCHAR(100)"/>
+            <column name="dinero" type="DECIMAL(10,2)" defaultValueNumeric="100.00"/>
+            <column name="zona_actual" type="VARCHAR(100)"/>
+            <column name="dentro_parque" type="BOOLEAN" defaultValueBoolean="true"/>
+            <column name="created_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP"/>
+        </createTable>
+    </changeSet>
+
+    <!-- ============================================ -->
+    <!-- TABLA: empleados                             -->
+    <!-- ============================================ -->
+    <changeSet id="3" author="agusttootto">
+        <createTable tableName="empleados">
+            <column name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="nombre" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="rol" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="zona_asignada" type="VARCHAR(100)"/>
+            <column name="activo" type="BOOLEAN" defaultValueBoolean="true"/>
+            <column name="created_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP"/>
+        </createTable>
+    </changeSet>
+
+    <!-- ============================================ -->
+    <!-- TABLA: transacciones (ingresos y gastos)     -->
+    <!-- ============================================ -->
+    <changeSet id="4" author="agusttootto">
+        <createTable tableName="transacciones">
+            <column name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="tipo" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="categoria" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="monto" type="DECIMAL(10,2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="descripcion" type="VARCHAR(500)"/>
+            <column name="fecha" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP"/>
+        </createTable>
+    </changeSet>
+
+    <!-- ============================================ -->
+    <!-- TABLA: eventos                               -->
+    <!-- ============================================ -->
+    <changeSet id="5" author="agusttootto">
+        <createTable tableName="eventos">
+            <column name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="tipo_evento" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="descripcion" type="VARCHAR(1000)"/>
+            <column name="zona_afectada" type="VARCHAR(100)"/>
+            <column name="fecha" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="resuelto" type="BOOLEAN" defaultValueBoolean="false"/>
+        </createTable>
+    </changeSet>
+
+    <!-- ============================================ -->
+    <!-- TABLA: zonas                                 -->
+    <!-- ============================================ -->
+    <changeSet id="6" author="agusttootto">
+        <createTable tableName="zonas">
+            <column name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="nombre" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="capacidad_maxima" type="INT"/>
+            <column name="tarifa_extra" type="DECIMAL(10,2)" defaultValueNumeric="0"/>
+            <column name="tiene_energia" type="BOOLEAN" defaultValueBoolean="true"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

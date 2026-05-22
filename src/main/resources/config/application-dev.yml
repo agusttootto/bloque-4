@@ -1,0 +1,47 @@
+# ===================================================================
+# Configuración para perfil "dev" - Parque de Dinosaurios
+# ===================================================================
+
+logging:
+  level:
+    ROOT: INFO
+    com.ejercicio.bloque4: DEBUG
+
+spring:
+  profiles:
+    active: dev
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/salsaf003
+    username: salsaf003
+    password: 12345
+    driver-class-name: org.postgresql.Driver
+  
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+  
+  liquibase:
+    enabled: true
+    change-log: classpath:config/liquibase/master.xml
+
+# ===================================================================
+# Configuración del Parque de Dinosaurios
+# ===================================================================
+
+park:
+  config:
+    max-tourists: 50
+    simulation-step-ms: 1000
+    events-enabled: true
+    dinosaurs:
+      carnivores: 5
+      herbivores: 10
+
+server:
+  port: 8088
