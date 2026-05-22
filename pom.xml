@@ -92,8 +92,7 @@
 				<artifactId>liquibase-maven-plugin</artifactId>
 				<version>4.24.0</version>
 				<configuration>
-					<!-- Cambia propertyFile por changeLogFile + parámetros directos -->
-					<changeLogFile>src/main/resources/db/changelog/master.xml</changeLogFile>
+					<changeLogFile>src/main/resources/config/liquibase/master.xml</changeLogFile>
 					<url>jdbc:postgresql://localhost:5432/salsaf003</url>
 					<username>salsaf003</username>
 					<password>12345</password>
